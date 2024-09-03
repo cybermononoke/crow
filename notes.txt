@@ -1,0 +1,13 @@
+Do birdseye
+Restyle all breeze stuff
+Replace all buttons !
+Add game-ify elements
+
+Add Penny
+
+
+
+
+    <button class="border border-black bg-white text-black shadow-[0_2px_4px_0_rgba(0,0,0,1)] hover:shadow-none transition-shadow duration-200 ease-in-out px-4 py-2">
+        Button Text
+    </button>
