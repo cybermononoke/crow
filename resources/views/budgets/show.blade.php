@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-screen bg-pink-50 flex items-center justify-center">
+<div class="min-h-screen bg-rose-50 flex items-center justify-center">
     <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h1 class="text-2xl font-semibold mb-6">Budget Details</h1>
 

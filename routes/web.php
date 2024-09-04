@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\BirdseyeController;
 use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\SpendingController;
 
@@ -49,6 +50,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/birdseye', function () {
         return view('birdseye');
     })->name('birdseye');
+    Route::get('/birdseye', [BirdseyeController::class, 'birdseye'])->name('birdseye');
 });
 
 

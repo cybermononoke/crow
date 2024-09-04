@@ -1,7 +1,10 @@
-Do birdseye
 Restyle all breeze stuff
 Replace all buttons !
 Add game-ify elements
+
+replace primary button with your button!
+fix blue navbar
+
 
 Add Penny
 

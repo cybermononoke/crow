@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Budget;
 use App\Models\Spending;
 use App\Models\Account;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\Log;
 
 class SpendingController extends Controller
 {
@@ -35,4 +39,5 @@ class SpendingController extends Controller
 
         return redirect()->route('budgets.show', $budget)->with('success', 'Spending created!');
     }
+
 }
