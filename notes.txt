@@ -6,11 +6,15 @@ replace primary button with your button!
 fix blue navbar
 
 
+Add budget ability; set duration of budget, etc etc
+Allow search features for searching your budget
+
+
 Add Penny
 
 
 
 
-    <button class="border border-black bg-white text-black shadow-[0_2px_4px_0_rgba(0,0,0,1)] hover:shadow-none transition-shadow duration-200 ease-in-out px-4 py-2">
-        Button Text
-    </button>
+            <div class="absolute top-[-6rem] left-1/2 transform -translate-x-1/2">
+            <img src="{{ asset('images/penny.svg') }}" alt="Custom Icon" class="w-32 h-32">
+        </div>

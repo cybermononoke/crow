@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="min-h-screen bg-rose-50 flex items-center justify-center">
-    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <div class="bg-white p-8 w-full max-w-md border border-black">
         <h1 class="text-2xl font-semibold mb-6">Budget Details</h1>
 
         <div class="mb-4">
@@ -27,9 +27,9 @@
             <form action="{{ route('budgets.destroy', $budget) }}" method="POST" class="inline">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 transition duration-150 ease-in-out">
-                    Delete
-                </button>
+                <x-primary-button class="ms-3">
+                    {{ __('Delete') }}
+                </x-primary-button>
             </form>
         </div>
     </div>

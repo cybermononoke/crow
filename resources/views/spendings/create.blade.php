@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="min-h-screen bg-rose-50 flex items-center justify-center">
-    <div class="bg-white p-8 border border-black w-full max-w-md"> 
+    <div class="bg-white p-8 border border-black w-full max-w-md">
         <h1 class="text-2xl font-semibold mb-6 text-center">Log Spending</h1>
 
         <form method="POST" action="{{ route('spendings.store') }}">
@@ -42,9 +42,9 @@
             </div>
 
             <div class="mt-6 text-center">
-                <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 transition duration-150 ease-in-out">
-                    Log Spending
-                </button>
+                <x-primary-button class="ms-3">
+                    {{ __('Log Spending') }}
+                </x-primary-button>
             </div>
         </form>
     </div>

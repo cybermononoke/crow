@@ -2,7 +2,12 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex items-center">
+
+                <a href="{{ route('welcome') }}" class="flex items-center">
+                    <img src="{{ asset('images/penny.svg') }}" alt="Custom Icon" class="w-16 h-16">
+                </a>
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('accounts')" :active="request()->routeIs('accounts')">
@@ -101,7 +106,7 @@
         <div class="pt-4 pb-1 border-t border-gray-200">
             @auth
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-base text-black">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-black">{{ Auth::user()->email }}</div>
             </div>
 
