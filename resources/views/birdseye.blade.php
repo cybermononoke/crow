@@ -25,7 +25,7 @@
     <script>
         const ctx = document.getElementById('spendingChart').getContext('2d');
         const spendingChart = new Chart(ctx, {
-            type: 'line', // Change this to 'bar' if you prefer a bar chart
+            type: 'line',
             data: {
                 labels: @json($labels),
                 datasets: [{

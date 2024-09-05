@@ -21,7 +21,7 @@
             <p class="text-lg">${{ number_format($account->balance, 2) }}</p>
         </div>
         @else
-        <p class="text-lg text-red-500 text-center">No account information available.</p>
+        <p class="text-lg text-blacks text-center">No account information available.</p>
         @endif
 
         <!-- Create New Account Button -->

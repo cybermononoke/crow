@@ -15,10 +15,6 @@ Route::get('/guest', function () {
     return view('guest');
 })->name('guest');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

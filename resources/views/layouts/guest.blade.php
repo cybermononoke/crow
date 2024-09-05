@@ -17,9 +17,22 @@
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-pink-50">
+    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-rose-50">
+        <!-- TEXT GOES HERE -->
+        <div class="text-2xl font-semibold mb-6">
+            @if (Route::currentRouteName() == 'login')
+            Login
+            @elseif (Route::currentRouteName() == 'register')
+            Register
+            @elseif (Route::currentRouteName() == 'password.request')
+            Forgot Password
+            @elseif (Route::currentRouteName() == 'password.reset')
+            Reset Password
+            @else
+            Welcome
+            @endif
+        </div>
         <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white overflow-hidden border border-black">
-
             {{ $slot }}
         </div>
     </div>

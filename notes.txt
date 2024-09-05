@@ -1,14 +1,16 @@
-Restyle all breeze stuff
-Replace all buttons !
-Add game-ify elements
 
-replace primary button with your button!
-fix blue navbar
+Add game-ify elements
 
 
 Add budget ability; set duration of budget, etc etc
-Allow search features for searching your budget
+Allow search features for searching your budget!
 
+--Fix Birdseye, fix profile page
+Fix dashboard page
+
+fix label for create account
+
+Add budget duration ability
 
 Add Penny
 

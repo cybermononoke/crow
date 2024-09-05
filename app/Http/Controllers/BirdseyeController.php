@@ -13,6 +13,7 @@ class BirdseyeController extends Controller
     {
         $user = Auth::user();
         $type = $request->input('type', 'monthly');
+        // $day = $request->input('day', Carbon::now()->day);
         $month = $request->input('month', Carbon::now()->month);
         $year = $request->input('year', Carbon::now()->year);
 
