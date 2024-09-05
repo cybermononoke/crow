@@ -13,17 +13,23 @@ class Budget extends Model
     use HasFactory;
 
     // belongs to Account
-    protected $fillable=[
+    protected $fillable = [
         'account_id',
         'name',
         'amount',
     ];
 
-    public function account(): BelongsTo{
+    protected $casts = [
+        'expires_at' => 'datetime',
+    ];
+
+    public function account(): BelongsTo
+    {
         return $this->belongsTo(Account::class);
     }
 
-    public function spendings(){
+    public function spendings()
+    {
         return $this->hasMany(Spending::class);
     }
 }

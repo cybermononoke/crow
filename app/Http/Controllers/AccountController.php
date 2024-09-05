@@ -12,8 +12,8 @@ class AccountController extends Controller
     public function show()
     {
         $user = Auth::user();
-        $account = DB::table('accounts')->where('user_id', $user->id)->first();
-        return view('accounts.accounts', compact('account'));
+        $accounts = DB::table('accounts')->where('user_id', $user->id)->get();
+        return view('accounts.accounts', compact('accounts'));
     }
 
     public function create()
@@ -25,6 +25,7 @@ class AccountController extends Controller
     {
         $validated = $request->validate([
             'account_type' => 'required|in:checking,savings',
+            'account_name' => 'required|string|max:255', 
             'balance' => 'required|numeric|min:0',
         ]);
 
@@ -34,6 +35,7 @@ class AccountController extends Controller
             'user_id' => Auth::id(),
             'account_number' => $accountNumber,
             'account_type' => $validated['account_type'],
+            'account_name' => $validated['account_name'], 
             'balance' => $validated['balance'],
         ]);
 

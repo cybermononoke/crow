@@ -20,10 +20,23 @@
             <p class="text-lg">{{ $budget->account->account_number }} ({{ ucfirst($budget->account->account_type) }})</p>
         </div>
 
+        <div class="mb-4">
+            <p>Budget Duration: {{ ucfirst($budget->duration) }}</p>
+
+            @if ($budget->expires_at)
+            <p>Expires: {{ $budget->expires_at->format('M d, Y H:i') }}</p>
+            @else
+            <p>Expires: Never</p>
+            @endif
+        </div>
+
+
         <div class="flex justify-between mt-6">
-            <a href="{{ route('budgets.edit', $budget) }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none focus:border-pink-700 focus:ring focus:ring-pink-200 transition duration-150 ease-in-out">
-                Edit
-            </a>
+            <form action="{{ route('budgets.edit', $budget) }}">
+                <x-primary-button class="ms-3">
+                    {{ __('Edit') }}
+                </x-primary-button>
+            </form>
             <form action="{{ route('budgets.destroy', $budget) }}" method="POST" class="inline">
                 @csrf
                 @method('DELETE')

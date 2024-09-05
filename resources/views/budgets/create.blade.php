@@ -9,7 +9,7 @@
             @csrf
             <div class="mb-4">
                 <label for="account_id" class="block text-sm font-medium text-gray-700">Account</label>
-                <select id="account_id" name="account_id" class="mt-1 block w-full bg-gray-50 border border-black  focus:ring-pink-500 focus:border-pink-500 sm:text-sm" required>
+                <select id="account_id" name="account_id" class="mt-1 block w-full bg-gray-50 border border-black focus:ring-pink-500 focus:border-pink-500 sm:text-sm" required>
                     @foreach ($accounts as $account)
                     <option value="{{ $account->id }}">{{ $account->account_number }} ({{ ucfirst($account->account_type) }})</option>
                     @endforeach
@@ -21,7 +21,7 @@
 
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                <input type="text" id="name" name="name" class="mt-1 block w-full bg-gray-50 border border-black  focus:ring-pink-500 focus:border-pink-500 sm:text-sm" value="{{ old('name') }}" required>
+                <input type="text" id="name" name="name" class="mt-1 block w-full bg-gray-50 border border-black focus:ring-pink-500 focus:border-pink-500 sm:text-sm" value="{{ old('name') }}" required>
                 @error('name')
                 <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -29,8 +29,21 @@
 
             <div class="mb-4">
                 <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
-                <input type="number" id="amount" name="amount" class="mt-1 block w-full bg-gray-50 border border-black  focus:ring-pink-500 focus:border-pink-500 sm:text-sm" value="{{ old('amount') }}" required>
+                <input type="number" id="amount" name="amount" class="mt-1 block w-full bg-gray-50 border border-black focus:ring-pink-500 focus:border-pink-500 sm:text-sm" value="{{ old('amount') }}" required>
                 @error('amount')
+                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- New: Duration Dropdown -->
+            <div class="mb-4">
+                <label for="duration" class="block text-sm font-medium text-gray-700">Duration</label>
+                <select id="duration" name="duration" class="mt-1 block w-full bg-gray-50 border border-black focus:ring-pink-500 focus:border-pink-500 sm:text-sm" required>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+                @error('duration')
                 <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>

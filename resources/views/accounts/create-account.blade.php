@@ -17,6 +17,11 @@
             </div>
 
             <div class="mb-4">
+                <label for="account_name" class="font-medium">Account Name</label>
+                <input type="text" id="account_name" name="account_name" class="form-input mt-1 block w-full" required>
+            </div>
+
+            <div class="mb-4">
                 <label for="balance" class="font-medium">Initial Balance</label>
                 <input type="number" id="balance" name="balance" class="form-input mt-1 block w-full" step="0.01" min="0" required>
             </div>

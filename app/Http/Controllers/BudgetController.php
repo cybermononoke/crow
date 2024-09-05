@@ -30,15 +30,24 @@ class BudgetController extends Controller
             'account_id' => 'required|exists:accounts,id',
             'name' => 'required|string|max:255',
             'amount' => 'required|numeric|min:0',
+            'duration' => 'required|in:daily,weekly,monthly',
         ]);
 
         $user = Auth::user();
         $account = Account::where('id', $request->account_id)->where('user_id', $user->id)->firstOrFail();
+        $expires_at = match ($request->duration) {
+            'daily' => now()->addDay(),
+            'weekly' => now()->addWeek(),
+            'monthly' => now()->addMonth(),
+            default => null,
+        };
 
         $budget = new Budget();
         $budget->account_id = $request->account_id;
         $budget->name = $request->name;
         $budget->amount = $request->amount;
+        $budget->duration = $request->duration;
+        $budget->expires_at = $expires_at;
         $budget->save();
 
         return redirect()->route('budgets.index')->with('success', 'Budget created successfully.');
