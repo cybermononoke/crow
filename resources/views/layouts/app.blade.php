@@ -35,8 +35,9 @@
 @include('layouts.navigation')
 
 
-<body>
+<body class="@yield('body-class')">
     @yield('content')
 </body>
+
 
 </html>

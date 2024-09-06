@@ -6,6 +6,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\BirdseyeController;
 use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\SpendingController;
+use App\Http\Controllers\ShopController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,10 @@ Route::get('/', function () {
 Route::get('/guest', function () {
     return view('guest');
 })->name('guest');
+
+Route::get('/shop', function () {
+    return view('shop');
+})->name('shop');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -46,7 +51,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/birdseye', function () {
         return view('birdseye');
     })->name('birdseye');
-    Route::get('/birdseye', [BirdseyeController::class, 'birdseye'])->name('birdseye');
+    // Route::get('/birdseye', [BirdseyeController::class, 'birdseye'])->name('birdseye');
+    Route::get('/birdseye', [BirdseyeController::class, 'index'])->name('birdseye');
+
+
+    // PRODUCTS
+    Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 });
 
 

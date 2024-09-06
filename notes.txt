@@ -3,5 +3,16 @@ Add game-ify elements
 
 Allow search features for searching your budget!
 
+Budgets page needs duration, amount set, etc
+
+Instead of logging spending...link to a fake bank somehow? like just automatically check how much you're draining? is that possible?
+
+Spending page should display last 10 spendings
+
+Add alerts for going over a budget !!!
+
+Add a fake "buying" page to help with logging the spending ???
+
 --Fix Birdseye, fix profile page
+
 

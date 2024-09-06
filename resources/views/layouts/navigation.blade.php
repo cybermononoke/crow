@@ -25,6 +25,10 @@
                     <x-nav-link :href="route('birdseye')" :active="request()->routeIs('birdseye')">
                         {{ __('Birdseye') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('shop')" :active="request()->routeIs('shop')">
+                        {{ __('Shop') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -100,6 +104,10 @@
 
             <x-nav-link :href="route('birdseye')" :active="request()->routeIs('birdseye')">
                 {{ __('Birdseye') }}
+            </x-nav-link>
+
+            <x-nav-link :href="route('shop')" :active="request()->routeIs('shop')">
+                {{ __('Shop') }}
             </x-nav-link>
         </div>
 
